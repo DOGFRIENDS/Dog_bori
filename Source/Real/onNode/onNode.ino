@@ -122,18 +122,16 @@ void setup() {
   BTSerial.begin(9600);
   dht.begin();  
   WiFi.disconnect();
-
-  Serial.println("Node & Arduino serialTest!!!");
-  Serial.println("Node & Arduino serialTest!!!");
-  Serial.println("Node & Arduino serialTest!!!");
-  Serial.println("Node & Arduino serialTest!!!");
 }
 
 void loop() {
-  receiveWiFiData();  
-  
-  while(WiFi.status() == WL_CONNECTED){
-    receiveMessageFromServer();     
-    checkTemp();
-  }     
+//  receiveWiFiData();  
+//  
+//  while(WiFi.status() == WL_CONNECTED){
+//    receiveMessageFromServer();     
+//    checkTemp();
+//  }
+  char a = '1';
+  Serial.println(a);
+  delay(1000);     
 }
