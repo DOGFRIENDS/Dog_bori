@@ -125,13 +125,13 @@ void setup() {
 }
 
 void loop() {
-//  receiveWiFiData();  
-//  
-//  while(WiFi.status() == WL_CONNECTED){
-//    receiveMessageFromServer();     
-//    checkTemp();
-//  }
-  char a = '1';
-  Serial.println(a);
-  delay(1000);     
+  receiveWiFiData();  
+  
+  while(WiFi.status() == WL_CONNECTED){
+    receiveMessageFromServer();     
+    checkTemp();
+  }
+//  char a = '1';
+//  Serial.println(a);
+//  delay(1000);     
 }

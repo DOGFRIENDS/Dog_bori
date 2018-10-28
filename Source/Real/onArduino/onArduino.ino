@@ -17,6 +17,7 @@ boolean driving = true;
 
 float distance, duration;
 
+char OldMode;
 
 void AutoDrive(){
   driving = true;
@@ -92,6 +93,66 @@ void Back(){
   }
 }
 
+void Left(){
+  if(OldMode == '3'){
+    driving = true;
+    while(driving){
+      if(driving = false){
+        Stop();
+      }
+      digitalWrite(8, 0);   
+      digitalWrite(7, 0);   
+    
+      digitalWrite(6, 1);
+      digitalWrite(5, 0);   
+      analogWrite(3, 255);    
+    }
+  }else if(OldMode == '4'){
+    driving = true;
+    while(driving){
+      if(driving = false){
+        Stop();
+      }
+      digitalWrite(8, 0);   
+      digitalWrite(7, 0);  
+
+      digitalWrite(6, 0);
+      digitalWrite(5, 1);   
+      analogWrite(3, 255);    
+    }
+  }
+}
+
+void Right(){
+  if(OldMode == '3'){
+    driving = true;
+    while(driving){
+      if(driving = false){
+        Stop();
+      }
+      digitalWrite(8, 1);   
+      digitalWrite(7, 0);   
+      analogWrite(11, 255);
+    
+      digitalWrite(6, 0);
+      digitalWrite(5, 0);   
+    }    
+  }else if(OldMode == '4'){
+    driving = true;
+    while(driving){
+      if(driving = false){
+        Stop();
+      }
+      digitalWrite(8, 0);   
+      digitalWrite(7, 1);   
+      analogWrite(11, 255);
+    
+      digitalWrite(6, 0);
+      digitalWrite(5, 0);   
+    }
+  }
+}
+
 void Stop(){
   driving = false;
   
@@ -119,18 +180,26 @@ void loop(){
   if(Serial.available()){
     Mode = Serial.read();
     switch(Mode){
-      case '1':
-        Go();
-        break;
-      case '2':
-        Back();
-        break;
-      case '3':
+      case '0':
         Stop();
         break;
-      case '4':
+      case '1':
         AutoDrive();
-        break;  
+        break;
+      case '3':
+        Go();
+        OldMode = Mode;
+        break;
+      case '4':
+        Back();
+        OldMode = Mode;
+        break;
+      case '5':
+        Left();
+        break;
+      case '6':
+        Right();
+        break;
     }
   }
 }
