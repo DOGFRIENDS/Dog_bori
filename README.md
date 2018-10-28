@@ -1,13 +1,12 @@
-#About Dog-bori...
-
-##Repository
+# About Dog-bori...
+## Repository
 - Docu
 - Source
 -- Library
 -- Real
 -- Test
 
-##What we used
+## What we used
 ### Main boards
 - Arduino UNO
 - NodeMcu LUA
