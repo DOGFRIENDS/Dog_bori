@@ -22,4 +22,4 @@
 - something else...
 
 ## Our work's photo
-![](Docu/work.jpg)
+![](Docu/work.JPG)
